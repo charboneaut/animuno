@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import { compAction, compCantPlay } from "./comp";
+import Center from "./comps/center/Center";
+import CompHand from "./comps/compPlayer/CompHand";
+import Log from "./comps/log/Log";
+import PlayerHand from "./comps/player/PlayerHand";
 import { createDraw, playCard } from "./helpers";
 
 function App() {
@@ -46,90 +50,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{playerTurn ? "Player Turn" : "Comp Turn"}</h1>
-      {hand.map((card) => (
-        <span
-          style={{
-            backgroundColor: card.color,
-            padding: "0.5em",
-            fontSize: "3em",
-          }}
-          key={card.id}
-        >
-          {card.number}
-          <button
-            onClick={() => {
-              if (!playerTurn) {
-                return;
-              }
-              const cardData = playCard(
-                discardPile[discardPile.length - 1],
-                hand,
-                card
-              );
-              if (!cardData) {
-                return;
-              }
-              setDiscard([...discardPile, ...cardData.discardCards]);
-              setHand(cardData.newHand);
-              setTurn(false);
-              compTurn(`Player played a ${card.color} ${card.number}`, card);
-            }}
-          >
-            play
-          </button>
-        </span>
-      ))}
-      <div style={{ marginTop: "5%" }}>
-        {handComp.map((card) => (
-          <span
-            style={{
-              backgroundColor: card.color,
-              padding: "0.5em",
-              fontSize: "3em",
-            }}
-            key={card.id}
-          >
-            {card.number}
-          </span>
-        ))}
-      </div>
-      <div style={{ marginTop: "5%" }}>
-        <span
-          style={{
-            backgroundColor: discardPile[discardPile.length - 1].color,
-            padding: "0.5em",
-            fontSize: "3em",
-          }}
-        >
-          {discardPile[discardPile.length - 1].number}
-        </span>
-        {drawPile.length > 0 ? (
-          <span
-            style={{
-              backgroundColor: drawPile[drawPile.length - 1].color,
-              padding: "0.5em",
-              fontSize: "3em",
-            }}
-          >
-            {drawPile[drawPile.length - 1].number}
-            <button
-              onClick={() => {
-                setHand([...hand, drawPile.pop()]);
-              }}
-            >
-              draw
-            </button>
-          </span>
-        ) : null}
-      </div>
+      <PlayerHand
+        playerTurn={playerTurn}
+        hand={hand}
+        discardPile={discardPile}
+        setDiscard={setDiscard}
+        setHand={setHand}
+        setTurn={setTurn}
+        compTurn={compTurn}
+      />
+      <CompHand handComp={handComp} />
+      <Center
+        discardPile={discardPile}
+        drawPile={drawPile}
+        setHand={hand}
+        hand={hand}
+      />
       <br />
-      <div>
-        <h1>Log</h1>
-        {log.map((logItem) => (
-          <h4>{logItem}</h4>
-        ))}
-      </div>
+      <Log log={log} />
     </div>
   );
 }
