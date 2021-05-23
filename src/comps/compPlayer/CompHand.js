@@ -1,18 +1,9 @@
 function CompHand(props) {
   return (
     <>
-      <div style={{ marginTop: "5%" }}>
+      <div>
         {props.handComp.map((card) => (
-          <span
-            style={{
-              backgroundColor: card.color,
-              padding: "0.5em",
-              fontSize: "3em",
-            }}
-            key={card.id}
-          >
-            {card.number}
-          </span>
+          <span key={card.id}>{card.number}</span>
         ))}
       </div>
     </>

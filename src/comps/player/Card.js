@@ -2,14 +2,7 @@ import { playCard } from "../../helpers";
 
 function Card(props) {
   return (
-    <span
-      style={{
-        backgroundColor: props.card.color,
-        padding: "0.5em",
-        fontSize: "3em",
-      }}
-      key={props.card.id}
-    >
+    <span key={props.card.id}>
       {props.card.number}
       <button
         onClick={() => {

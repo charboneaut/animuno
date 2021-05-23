@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import { compAction, compCantPlay } from "./comp";
 import Center from "./comps/center/Center";
 import CompHand from "./comps/compPlayer/CompHand";
 import Log from "./comps/log/Log";
 import PlayerHand from "./comps/player/PlayerHand";
-import { createDraw, playCard } from "./helpers";
+import { createDraw } from "./helpers";
 
 function App() {
   const [hand, setHand] = useState(createDraw(7));
@@ -49,26 +50,29 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <PlayerHand
-        playerTurn={playerTurn}
-        hand={hand}
-        discardPile={discardPile}
-        setDiscard={setDiscard}
-        setHand={setHand}
-        setTurn={setTurn}
-        compTurn={compTurn}
-      />
-      <CompHand handComp={handComp} />
-      <Center
-        discardPile={discardPile}
-        drawPile={drawPile}
-        setHand={hand}
-        hand={hand}
-      />
-      <br />
-      <Log log={log} />
-    </div>
+    <Container className="App" fluid>
+      <Col>
+        <CompHand handComp={handComp} />
+        <Center
+          discardPile={discardPile}
+          drawPile={drawPile}
+          setHand={setHand}
+          hand={hand}
+        />
+        <PlayerHand
+          playerTurn={playerTurn}
+          hand={hand}
+          discardPile={discardPile}
+          setDiscard={setDiscard}
+          setHand={setHand}
+          setTurn={setTurn}
+          compTurn={compTurn}
+        />
+      </Col>
+      <Col>
+        <Log log={log} />
+      </Col>
+    </Container>
   );
 }
 
