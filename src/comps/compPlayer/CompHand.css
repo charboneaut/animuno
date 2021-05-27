@@ -6,4 +6,5 @@
   resize: vertical;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  overflow-x: hidden;
 }

@@ -1,6 +1,8 @@
 #log {
   border: 1px solid whitesmoke;
-  max-height: 50vh;
+  max-height: 85vh;
   overflow: scroll;
   resize: vertical;
+  margin-top: 1rem;
+  overflow-x: hidden;
 }

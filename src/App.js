@@ -18,35 +18,37 @@ function App() {
 
   function compTurn(playerLog, mostRecentCard) {
     // the most recent player action and top of the discard have to passed rather than taken from state because async blah blah
-    console.log("computer tink hard");
-    let pseudoHand = handComp;
-    let ouchCount = 0;
-    while (compCantPlay(pseudoHand, mostRecentCard)) {
-      pseudoHand.push(drawPile.pop());
-      ouchCount++;
-    }
-    setHandComp(pseudoHand);
-    const cardData = compAction(
-      mostRecentCard,
-      handComp,
-      drawPile[drawPile.length - 1]
-    );
-    setHandComp(cardData.newHand);
-    setDiscard([...discardPile, ...cardData.discardCards]);
-    setTurn(true);
-    if (ouchCount > 0) {
-      setLog([
-        ...log,
-        playerLog,
-        `Computer couldn't play and drew ${ouchCount} cards, then played a ${cardData.playedCard.color} ${cardData.playedCard.number}`,
-      ]);
-    } else {
-      setLog([
-        ...log,
-        playerLog,
-        `Computer played a ${cardData.playedCard.color} ${cardData.playedCard.number}`,
-      ]);
-    }
+    setTimeout(() => {
+      console.log("computer tink hard");
+      let pseudoHand = handComp;
+      let ouchCount = 0;
+      while (compCantPlay(pseudoHand, mostRecentCard)) {
+        pseudoHand.push(drawPile.pop());
+        ouchCount++;
+      }
+      setHandComp(pseudoHand);
+      const cardData = compAction(
+        mostRecentCard,
+        handComp,
+        drawPile[drawPile.length - 1]
+      );
+      setHandComp(cardData.newHand);
+      setDiscard([...discardPile, ...cardData.discardCards]);
+      setTurn(true);
+      if (ouchCount > 0) {
+        setLog([
+          ...log,
+          playerLog,
+          `Computer couldn't play and drew ${ouchCount} card(s), then played a ${cardData.playedCard.color} ${cardData.playedCard.number}`,
+        ]);
+      } else {
+        setLog([
+          ...log,
+          playerLog,
+          `Computer played a ${cardData.playedCard.color} ${cardData.playedCard.number}`,
+        ]);
+      }
+    }, 1000);
   }
 
   return (
@@ -58,6 +60,7 @@ function App() {
           drawPile={drawPile}
           setHand={setHand}
           hand={hand}
+          playerTurn={playerTurn}
         />
         <PlayerHand
           playerTurn={playerTurn}

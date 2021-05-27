@@ -41,9 +41,14 @@ function Center(props) {
       </BootstrapCard>
 
       {props.drawPile.length > 0 ? (
-        <span>
-          <h1>{props.playerTurn ? "Player Turn" : "Comp Turn"}</h1>
-        </span>
+        <div>
+          <span className="turn">
+            {props.playerTurn ? "Player Turn" : "Comp Turn"}
+          </span>
+          <span style={{ textAlign: "right" }} className="arrow">
+            {props.playerTurn ? "↓" : "↑"}
+          </span>
+        </div>
       ) : null}
     </Container>
   );

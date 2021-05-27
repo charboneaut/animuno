@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  height: 200vh;
   color: whitesmoke;
   margin-top: 1rem;
 }
@@ -16,5 +16,5 @@
 }
 
 body {
-  background-image: linear-gradient(black, rgb(25, 25, 25));
+  background-image: linear-gradient(black, rgb(50, 50, 50));
 }
