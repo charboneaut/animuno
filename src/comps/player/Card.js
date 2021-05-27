@@ -1,10 +1,21 @@
 import { playCard } from "../../helpers";
+import { Button, Card as BootstrapCard } from "react-bootstrap";
 
 function Card(props) {
   return (
-    <span key={props.card.id}>
-      {props.card.number}
-      <button
+    <BootstrapCard
+      key={props.card.id}
+      id={"card"}
+      style={{ backgroundColor: props.card.color }}
+    >
+      <BootstrapCard.Body>
+        <BootstrapCard.Text id="cardNum">
+          {props.card.number}
+        </BootstrapCard.Text>
+      </BootstrapCard.Body>
+
+      <Button
+        variant="dark"
         onClick={() => {
           if (!props.playerTurn) {
             return;
@@ -27,8 +38,8 @@ function Card(props) {
         }}
       >
         play
-      </button>
-    </span>
+      </Button>
+    </BootstrapCard>
   );
 }
 

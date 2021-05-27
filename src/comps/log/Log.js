@@ -1,11 +1,14 @@
+import { Container } from "react-bootstrap";
+import "./Log.css";
+
 function Log(props) {
   return (
-    <div>
+    <Container id={"log"}>
       <h1>Log</h1>
       {props.log.map((logItem) => (
         <h4>{logItem}</h4>
       ))}
-    </div>
+    </Container>
   );
 }
 

@@ -1,9 +1,10 @@
+import { Container } from "react-bootstrap";
 import Card from "./Card";
+import "./PlayerHand.css";
 
 function PlayerHand(props) {
   return (
-    <>
-      <h1>{props.playerTurn ? "Player Turn" : "Comp Turn"}</h1>
+    <Container id={"player"}>
       {props.hand.map((card) => (
         <Card
           card={card}
@@ -16,7 +17,7 @@ function PlayerHand(props) {
           compTurn={props.compTurn}
         />
       ))}
-    </>
+    </Container>
   );
 }
 

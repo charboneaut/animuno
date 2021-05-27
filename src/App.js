@@ -50,8 +50,8 @@ function App() {
   }
 
   return (
-    <Container className="App" fluid>
-      <Col>
+    <>
+      <Container fluid className="App">
         <CompHand handComp={handComp} />
         <Center
           discardPile={discardPile}
@@ -68,11 +68,9 @@ function App() {
           setTurn={setTurn}
           compTurn={compTurn}
         />
-      </Col>
-      <Col>
         <Log log={log} />
-      </Col>
-    </Container>
+      </Container>
+    </>
   );
 }
 

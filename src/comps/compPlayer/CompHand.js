@@ -1,11 +1,25 @@
+import { Container } from "react-bootstrap";
+import "./CompHand.css";
+import { Card as BootstrapCard } from "react-bootstrap";
+
 function CompHand(props) {
   return (
     <>
-      <div>
+      <Container id={"compHand"}>
         {props.handComp.map((card) => (
-          <span key={card.id}>{card.number}</span>
+          <BootstrapCard
+            key={card.id}
+            id="card"
+            style={{ backgroundColor: card.color }}
+          >
+            <BootstrapCard.Body>
+              <BootstrapCard.Text id="cardNum">
+                {card.number}
+              </BootstrapCard.Text>
+            </BootstrapCard.Body>
+          </BootstrapCard>
         ))}
-      </div>
+      </Container>
     </>
   );
 }

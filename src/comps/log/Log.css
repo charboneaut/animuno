@@ -1,0 +1,6 @@
+#log {
+  border: 1px solid whitesmoke;
+  max-height: 50vh;
+  overflow: scroll;
+  resize: vertical;
+}

@@ -1,5 +1,20 @@
 .App {
-  background-image: linear-gradient(black, rgb(25, 25, 25));
   height: 100vh;
   color: whitesmoke;
+  margin-top: 1rem;
+}
+
+#card {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  width: 7rem;
+}
+
+#cardNum {
+  font-size: 2.5rem;
+}
+
+body {
+  background-image: linear-gradient(black, rgb(25, 25, 25));
 }
