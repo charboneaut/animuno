@@ -24,3 +24,11 @@ export function playCard(discardTop, hand, card) {
     return { newHand, discardCards };
   }
 }
+
+export function determineColor(card, xray) {
+  if (xray) {
+    return card.color;
+  } else {
+    return "whitesmoke";
+  }
+}

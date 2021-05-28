@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import "./CompHand.css";
 import { Card as BootstrapCard } from "react-bootstrap";
+import { determineColor } from "../../helpers";
 
 function CompHand(props) {
   return (
@@ -10,11 +11,11 @@ function CompHand(props) {
           <BootstrapCard
             key={card.id}
             id="card"
-            style={{ backgroundColor: card.color }}
+            style={{ backgroundColor: determineColor(card, props.xray) }}
           >
             <BootstrapCard.Body>
               <BootstrapCard.Text id="cardNum">
-                {card.number}
+                {props.xray ? card.number : "?"}
               </BootstrapCard.Text>
             </BootstrapCard.Body>
           </BootstrapCard>

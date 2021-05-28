@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Button, Card as BootstrapCard } from "react-bootstrap";
+import { determineColor } from "../../helpers";
 import "./Center.css";
 
 function Center(props) {
@@ -22,12 +23,17 @@ function Center(props) {
       <BootstrapCard
         id="card"
         style={{
-          backgroundColor: props.drawPile[props.drawPile.length - 1].color,
+          backgroundColor: determineColor(
+            props.drawPile[props.drawPile.length - 1],
+            props.xray
+          ),
         }}
       >
         <BootstrapCard.Body>
           <BootstrapCard.Text id="cardNum">
-            {props.drawPile[props.drawPile.length - 1].number}
+            {props.xray
+              ? props.drawPile[props.drawPile.length - 1].number
+              : "?"}
           </BootstrapCard.Text>
           <Button
             variant="dark"

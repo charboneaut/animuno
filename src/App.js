@@ -15,6 +15,7 @@ function App() {
   const [drawPile, setDraw] = useState(createDraw(50));
   const [playerTurn, setTurn] = useState(true);
   const [log, setLog] = useState([]);
+  const [xray, toggleXray] = useState(false);
 
   function compTurn(playerLog, mostRecentCard) {
     // the most recent player action and top of the discard have to passed rather than taken from state because async blah blah
@@ -54,8 +55,9 @@ function App() {
   return (
     <>
       <Container fluid className="App">
-        <CompHand handComp={handComp} />
+        <CompHand handComp={handComp} xray={xray} />
         <Center
+          xray={xray}
           discardPile={discardPile}
           drawPile={drawPile}
           setHand={setHand}
@@ -71,7 +73,7 @@ function App() {
           setTurn={setTurn}
           compTurn={compTurn}
         />
-        <Log log={log} />
+        <Log log={log} xray={xray} toggleXray={toggleXray} />
       </Container>
     </>
   );
