@@ -1,0 +1,8 @@
+#player {
+  text-align: center;
+  max-height: 50vh;
+  resize: vertical;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,34 @@
+#log {
+  max-height: 85vh;
+  overflow: scroll;
+  resize: vertical;
+  margin-top: 3rem;
+  overflow-x: hidden;
+  min-height: 40vh;
+}
+
+.logTitle {
+  display: inline-block;
+}
+
+.settingsTitle {
+  display: inline-block;
+  margin-left: 1rem;
+  color: gray;
+}
+
+.settingsTitle:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.settingItem {
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+}
+
+.toggler {
+  margin-right: 0.5rem;
+  width: 1rem;
+}

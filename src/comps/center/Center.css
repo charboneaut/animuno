@@ -1,0 +1,15 @@
+#center {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.arrow {
+  font-size: 5rem;
+  margin-left: 12rem;
+}
+
+.turn {
+  font-size: 2rem;
+}

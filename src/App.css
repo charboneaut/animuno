@@ -1,0 +1,26 @@
+.App {
+  height: 200vh;
+  color: whitesmoke;
+  margin-top: 1rem;
+}
+
+#card {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  width: 7rem;
+  border: 1px solid whitesmoke;
+  margin: 3px;
+}
+
+#cardNum {
+  font-size: 2.5rem;
+}
+
+body {
+  background-image: linear-gradient(black, rgb(50, 50, 50));
+}
+
+.cardExtender {
+  opacity: 0;
+}
