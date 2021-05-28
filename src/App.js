@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "./App.css";
 import { compAction, compCantPlay } from "./comp";
 import Center from "./comps/center/Center";
@@ -12,7 +12,7 @@ function App() {
   const [hand, setHand] = useState(createDraw(7));
   const [handComp, setHandComp] = useState(createDraw(7));
   const [discardPile, setDiscard] = useState(createDraw(1));
-  const [drawPile, setDraw] = useState(createDraw(50));
+  const [drawPile] = useState(createDraw(50));
   const [playerTurn, setTurn] = useState(true);
   const [log, setLog] = useState([]);
   const [xray, toggleXray] = useState(false);
