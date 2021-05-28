@@ -1,10 +1,10 @@
 #log {
-  border: 1px solid whitesmoke;
   max-height: 85vh;
   overflow: scroll;
   resize: vertical;
-  margin-top: 1rem;
+  margin-top: 3rem;
   overflow-x: hidden;
+  min-height: 40vh;
 }
 
 .logTitle {

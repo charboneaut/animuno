@@ -9,6 +9,8 @@
   color: black;
   text-align: center;
   width: 7rem;
+  border: 1px solid whitesmoke;
+  margin: 3px;
 }
 
 #cardNum {
@@ -17,4 +19,8 @@
 
 body {
   background-image: linear-gradient(black, rgb(50, 50, 50));
+}
+
+.cardExtender {
+  opacity: 0;
 }

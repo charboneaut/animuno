@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import "./CompHand.css";
 import { Card as BootstrapCard } from "react-bootstrap";
 import { determineColor } from "../../helpers";
@@ -18,6 +18,9 @@ function CompHand(props) {
                 {props.xray ? card.number : "?"}
               </BootstrapCard.Text>
             </BootstrapCard.Body>
+            <Button style={{ cursor: "default" }} className="cardExtender">
+              play
+            </Button>
           </BootstrapCard>
         ))}
       </Container>

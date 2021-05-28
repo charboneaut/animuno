@@ -1,10 +1,7 @@
 #compHand {
-  border: 1px solid whitesmoke;
   text-align: center;
-  overflow: scroll;
   max-height: 50vh;
   resize: vertical;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  overflow-x: hidden;
 }

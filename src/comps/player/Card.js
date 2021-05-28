@@ -15,6 +15,7 @@ function Card(props) {
       </BootstrapCard.Body>
 
       <Button
+        style={{ marginBottom: "1rem" }}
         variant="dark"
         onClick={() => {
           if (!props.playerTurn) {

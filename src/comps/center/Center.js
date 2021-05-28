@@ -18,6 +18,9 @@ function Center(props) {
           <BootstrapCard.Text id="cardNum">
             {props.discardPile[props.discardPile.length - 1].number}
           </BootstrapCard.Text>
+          <Button style={{ cursor: "default" }} className="cardExtender">
+            play
+          </Button>
         </BootstrapCard.Body>
       </BootstrapCard>
       <BootstrapCard
